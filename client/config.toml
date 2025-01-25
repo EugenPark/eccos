@@ -1,0 +1,10 @@
+server_ids = [1,2,3]
+port = 8080
+
+[experiment]
+duration = 180
+requests_per_second = 5
+
+[experiment.distribution_type]
+type = "Tail" # "Uniform", "Normal"
+weights = [100, 50, 25, 12, 4, 3, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]

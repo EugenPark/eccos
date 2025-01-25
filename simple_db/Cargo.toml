@@ -1,0 +1,13 @@
+[package]
+name = "simple_db"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+log = "0.4.25"
+omnipaxos = { version = "0.2.2", features = ["serde", "macros"] }
+rand = "0.8.5"
+rand_distr = "0.4.0"
+serde = { version = "1.0.217", features = ["derive"] }
+uuid = { version = "1.12.1", features = ["serde", "v4"] }
+zipf = "7.0.1"

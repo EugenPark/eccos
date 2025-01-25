@@ -1,0 +1,18 @@
+[package]
+name = "client"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1.43.0", features = ["full"] }
+anyhow = "1.0.95"
+network = { path = "../network/" }
+env_logger = "0.11.6"
+simple_db = { path = "../simple_db" }
+bincode = "1.3.3"
+rand = { version = "0.8.5", features = ["small_rng"] }
+once_cell = "1.20.2"
+log = "0.4.25"
+uuid = "1.12.1"
+serde = { version = "1.0.217", features = ["derive"] }
+toml = "0.8.20"

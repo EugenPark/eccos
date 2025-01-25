@@ -1,0 +1,57 @@
+version: '3.9' # Specify the version of Docker Compose
+
+x-server: &common-server
+  build:
+    context: .
+    dockerfile: ./server/dockerfile
+  volumes:
+    - ./data:/volumes/
+
+x-client: &common-client
+  build:
+    context: .
+    dockerfile: ./client/dockerfile
+  volumes:
+    - ./data:/volumes/
+  depends_on:
+    - server1
+    - server2
+    - server3
+
+services:
+  server1:
+    <<: *common-server
+    hostname: cc_server1
+    environment:
+      PID: 1
+
+  server2:
+    <<: *common-server
+    hostname: cc_server2
+    environment:
+      PID: 2
+
+  server3:
+    <<: *common-server
+    hostname: cc_server3
+    environment:
+      PID: 3
+
+  client1:
+    <<: *common-client
+    hostname: cc_client1
+    environment:
+      PID: 1
+
+  client2:
+    <<: *common-client
+    hostname: cc_client2
+    environment:
+      PID: 2
+
+  client3:
+    <<: *common-client
+    hostname: cc_client3
+    environment:
+      PID: 3
+

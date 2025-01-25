@@ -1,0 +1,7 @@
+[workspace]
+# name = "cc_scheduler"
+resolver = "2"
+# version = "0.0.1"
+# edition = "2021"
+# authors = ["Eugene Park"]
+members = [ "server", "client", "network", "simple_db"]

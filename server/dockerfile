@@ -1,0 +1,18 @@
+FROM rust
+
+WORKDIR /usr/src
+
+COPY server server
+COPY network network
+COPY simple_db simple_db
+
+WORKDIR /usr/src/server
+
+# RUN cargo install --profile release --path .
+RUN cargo install --path .
+
+EXPOSE 8080
+
+ENV RUST_LOG=info
+
+CMD [  "server" ]
